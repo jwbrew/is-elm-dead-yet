@@ -1,7 +1,11 @@
 module Main exposing (main)
 
 import Browser
+import Browser.Dom exposing (Element)
 import Browser.Navigation
+import Element exposing (Element)
+import Element.Background
+import Element.Font
 import Html exposing (Html)
 import Url exposing (Url)
 
@@ -48,8 +52,63 @@ onUrlRequest _ =
 
 
 view : Model -> Browser.Document Msg
-view _ =
-    { title = "Is Elm Dead Yet?", body = [ Html.text "NO" ] }
+view model =
+    { title = "Is Elm Dead Yet?"
+    , body = [ Element.layout [] <| viewBody model ]
+    }
+
+
+viewBody : Model -> Element Msg
+viewBody _ =
+    Element.column
+        [ Element.width Element.fill
+        , Element.height Element.fill
+        , Element.Background.color (Element.rgb255 108 227 199)
+        ]
+        [ Element.el
+            [ Element.centerX
+            , Element.centerY
+            , Element.Font.color (Element.rgb255 25 25 25)
+            , Element.Font.size 150
+            , Element.padding 30
+            ]
+            (Element.text "NO!")
+        , Element.newTabLink
+            [ Element.centerX
+            ]
+            { url = "https://github.com/FidelisClayton/elm-jobs"
+            , label =
+                Element.el
+                    [ Element.Font.color (Element.rgb255 25 25 25)
+                    , Element.Font.size 20
+                    , Element.padding 10
+                    , Element.Font.underline
+                    ]
+                    (Element.text "Here are some Elm jobs")
+            }
+        , Element.newTabLink [ Element.centerX ]
+            { url = "https://github.com/jah2488/elm-companies"
+            , label =
+                Element.el
+                    [ Element.Font.color (Element.rgb255 25 25 25)
+                    , Element.Font.size 20
+                    , Element.padding 10
+                    , Element.Font.underline
+                    ]
+                    (Element.text "Here are some companies that use Elm in production")
+            }
+        , Element.newTabLink [ Element.centerX ]
+            { url = "https://github.com/jwbrew/is-elm-dead-yet"
+            , label =
+                Element.el
+                    [ Element.Font.color (Element.rgb255 60 60 60)
+                    , Element.Font.size 15
+                    , Element.padding 20
+                    , Element.Font.underline
+                    ]
+                    (Element.text "Have something to say on the matter? Contributions encouraged.")
+            }
+        ]
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
