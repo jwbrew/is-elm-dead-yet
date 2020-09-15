@@ -75,38 +75,33 @@ viewBody _ =
             (Element.text "NO!")
         , Element.newTabLink
             [ Element.centerX
+            , Element.Font.color (Element.rgb255 25 25 25)
+            , Element.Font.size 20
+            , Element.padding 10
+            , Element.Font.underline
             ]
             { url = "https://github.com/FidelisClayton/elm-jobs"
-            , label =
-                Element.el
-                    [ Element.Font.color (Element.rgb255 25 25 25)
-                    , Element.Font.size 20
-                    , Element.padding 10
-                    , Element.Font.underline
-                    ]
-                    (Element.text "Here are some Elm jobs")
+            , label = Element.text "Here are some Elm jobs"
             }
-        , Element.newTabLink [ Element.centerX ]
+        , Element.newTabLink
+            [ Element.centerX
+            , Element.Font.color (Element.rgb255 25 25 25)
+            , Element.Font.size 20
+            , Element.padding 10
+            , Element.Font.underline
+            ]
             { url = "https://github.com/jah2488/elm-companies"
-            , label =
-                Element.el
-                    [ Element.Font.color (Element.rgb255 25 25 25)
-                    , Element.Font.size 20
-                    , Element.padding 10
-                    , Element.Font.underline
-                    ]
-                    (Element.text "Here are some companies that use Elm in production")
+            , label = Element.text "Here are some companies that use Elm in production"
             }
-        , Element.newTabLink [ Element.centerX ]
+        , Element.newTabLink
+            [ Element.centerX
+            , Element.Font.color (Element.rgb255 60 60 60)
+            , Element.Font.size 15
+            , Element.padding 20
+            , Element.Font.underline
+            ]
             { url = "https://github.com/jwbrew/is-elm-dead-yet"
-            , label =
-                Element.el
-                    [ Element.Font.color (Element.rgb255 60 60 60)
-                    , Element.Font.size 15
-                    , Element.padding 20
-                    , Element.Font.underline
-                    ]
-                    (Element.text "Have something to say on the matter? Contributions encouraged.")
+            , label = Element.text "Have something to say on the matter? Contributions encouraged."
             }
         ]
 
