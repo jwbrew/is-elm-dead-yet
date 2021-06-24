@@ -80,7 +80,7 @@ viewBody _ =
             , Element.padding 10
             , Element.Font.underline
             ]
-            { url = "https://github.com/FidelisClayton/elm-jobs"
+            { url = "https://elmlang.slack.com/archives/C0LUAGWRK"
             , label = Element.text "Here are some Elm jobs"
             }
         , Element.newTabLink
